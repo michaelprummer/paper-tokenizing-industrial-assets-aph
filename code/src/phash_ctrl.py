@@ -48,11 +48,6 @@ class pHashBaseController:
             scaled_size = self.get_scaled_size(hash_img_size, image.width,
                                                image.height)
             resized_img = image.resize(scaled_size, Image.Resampling.LANCZOS)
-            # Paste into new image without deformation
-            #image = black_square.filter(ImageFilter.GaussianBlur(radius=1))
-            #image = black_square.filter(ImageFilter.EDGE_ENHANCE)
-            #image = black_square.filter(ImageFilter.SMOOTH)
-
             black_square = Image.new(mode="L", size=size)
             black_square.paste(resized_img)
             image = black_square
@@ -151,7 +146,6 @@ class pHashController(pHashBaseController):
             Create table:
             Folder / Hamming (to ave) / Normalized (to ave) / Manipulator
         """
-        # print("metadata", metadata)
         table = []
         for idx, hash_binary in enumerate(hashes):
             hash = str(hash_binary)
@@ -180,8 +174,6 @@ class pHashController(pHashBaseController):
                               'norm', 'mod', 'value', 'image_set', "module",
                               'valid'
                           ])
-
-        # print(df)
         return df.sort_values(by=['name', 'value'])
 
     def get_table_data_versions(self, hashes: list, metadata: dict,
@@ -190,7 +182,6 @@ class pHashController(pHashBaseController):
             Create table:
             Folder / Hamming (to ave) / Normalized (to ave) / Manipulator
         """
-        # print("metadata", metadata)
         table = []
 
         for i, hash_binary in enumerate(hashes):
@@ -236,16 +227,13 @@ class pHashController(pHashBaseController):
                               'norm', 'phash-n'
                           ])
 
-        # print(df)
         return df.sort_values(by=['name', 'value'])
 
     def get_manual_mpls(self, file_list: list, label: str):
         hash_list = []
         for mpls_folder in file_list:
             folders = glob(f"{mpls_folder}/*")
-
             na_phash = self.__get_na_phash(folders)
-            #print("mpls_folder", mpls_folder, na_phash)
             for file in folders:
                 file_split = file.split("-")
                 mod = file_split[file_split.__len__() - 1][:-4]
@@ -258,7 +246,6 @@ class pHashController(pHashBaseController):
                 if mod == "na":
                     continue
                 if label == "elements":
-                    #name = f"{mod}_{os.path.basename(file.split('-')[0])}"
                     name = f"{mod}"
                 elif label == "conduct_width":
                     layer = file.split("/")[-2].split("_")[0]
@@ -286,9 +273,3 @@ class pHashController(pHashBaseController):
             if "-na" in file or "na-" in file:
                 img = Image.open(file)
                 return str(self.get_phash(img))
-
-
-# config["hash_size"] = 8
-# c = pHashBaseController()
-# p = "./assets/original/grids/BusPirate-v4b"
-# r1 = c.compare_crop_resistant(f"{p}/res-na-busPirate4v.png", f"{p}/mpl-grid-9-busPirate4v.png")
