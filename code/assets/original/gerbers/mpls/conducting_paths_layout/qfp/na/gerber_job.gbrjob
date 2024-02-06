@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2023-09-07T08:23:00Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "QFP80-bo"
+        },
+        "Owner": "Michael Prummer <prummermichael@gmail.com>",
+        "Size": {
+            "X": 40.64,
+            "Y": 40.64
+        }
+    }
+}

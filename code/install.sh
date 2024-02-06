@@ -1,0 +1,10 @@
+pip install ImageHash
+pip install numpy
+pip install distance
+pip install PIL
+pip install pymerkle
+pip install pandas
+pip install openpyxl
+pip install jinja2
+pip install pcb-tools
+pip install matplotlib

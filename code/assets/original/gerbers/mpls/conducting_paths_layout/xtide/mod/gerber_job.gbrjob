@@ -1,0 +1,24 @@
+{
+    "Header": {
+        "Comment": "All values are metric (mm)",
+        "CreationDate": "2023-09-07T08:31:27Z",
+        "GenerationSoftware": {
+            "Application": "EAGLE",
+            "Vendor": "Autodesk",
+            "Version": "9.6.2"
+        },
+        "Part": "Single"
+    },
+    "Overall": {
+        "BoardThickness": 1.57,
+        "LayerNumber": 2,
+        "Name": {
+            "ProjectId": "XTIDE-CPLD-3V3-v2a"
+        },
+        "Owner": "Michael Prummer <prummermichael@gmail.com>",
+        "Size": {
+            "X": 103.9688,
+            "Y": 79.5237
+        }
+    }
+}
